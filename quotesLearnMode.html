@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Learn Mode
+		</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="main.css"></link>
+	</head>
+	
+	<body>
+		<script src="createHeader.js"></script>
+	
+		<br/>
+	
+		<div id="centerBoard" class="mainDiv">
+		
+		</div>
+		
+		<br/>
+		
+		<script>
+			//load center board 
+			var centerBoard = document.getElementById("centerBoard");
+			
+			//load quotes 
+			var quotesPath = window.location.href.substring(window.location.href.indexOf("=") + 1);
+			
+			//load script 
+			var appendScript = document.createElement("script");
+			appendScript.src = quotesPath;
+			var quotes = [];
+			var quoteIndex = 0;
+			var alphaChange = 0.025;
+			
+			appendScript.onload = function(){
+				loadQuote(0);
+			};
+			
+			//load quote 
+			function loadQuote(num){
+				quoteIndex = num;
+				centerBoard.innerHTML = "<h1>Copy Out The Quotes Below</h1><br/>" + "<h2>Quote:<br/>\"" + quotes[num][0] + "\"</h2><br/><h3>Quote Source:<br/>" + quotes[num][1] + "</h3><br/><br/><h3>Quote:</h3><input id=\"inputText\"></input><br/><br/><h3>Quote Source</h3><input id=\"inputSource\"></input>";
+				document.getElementById("inputText").select();
+			};
+			
+			//start correct 
+			function startCorrect(){
+				centerBoard.style.opacity = 0;
+				centerBoard.innerHTML = "<h1>Correct!</h1>";
+				setTimeout(incrementCorrect, 1);
+			};
+			
+			//incrementCorrect
+			function incrementCorrect(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+		
+				if(parseFloat(centerBoard.style.opacity) < 1){
+					//basically recurse 
+					//alert(centerBoard.style.opacity);
+					setTimeout(incrementCorrect, 10);
+				} else {
+					//decrement
+					setTimeout(decrementCorrect, 10);
+				};
+			};
+			
+			//decrementCorrect
+			function decrementCorrect(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) - alphaChange;
+				
+				if(parseFloat(centerBoard.style.opacity) > 0){
+					//basically recurse 
+					setTimeout(decrementCorrect, 10);
+				} else {
+					//is there another quote?
+					quoteIndex ++;
+					if(quoteIndex < quotes.length){
+						loadQuote(quoteIndex);
+					} else {
+						//show end screen
+						centerBoard.innerHTML = "<h1>You Have Completed The Practice Session!</h1><br/><button onclick=\"returnToMenu()\">Return To Menu</br>";
+					};
+					
+					setTimeout(fadeInQuestion, 10);
+				};
+			};	
+			
+			//fade in question;
+			function fadeInQuestion(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+				
+				if(parseFloat(centerBoard.style.opacity) >= 1){
+					centerBoard.style.opacity = 1;
+				} else {
+					setTimeout(fadeInQuestion, 10);
+				};
+			};
+			
+			
+			//return to menu 
+			function returnToMenu(){
+				window.location = "index.html";
+			};
+			
+			//add event listener 
+			document.addEventListener("input", function(){
+				//check if input element exists 
+				if(document.getElementById("inputText") != undefined && document.getElementById("inputSource") != undefined){
+					if(document.getElementById("inputSource").value.toLowerCase() == quotes[quoteIndex][1].toLowerCase() && document.getElementById("inputText").value.toLowerCase() == quotes[quoteIndex][0].toLowerCase()){
+						//next quote 
+						document.getElementById("inputText").value = "";
+						document.getElementById("inputSource").value = "";
+						startCorrect();
+					};
+				};
+			});
+			
+			document.body.appendChild(appendScript);
+		</script>
+	</body>
+</html>

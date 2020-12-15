@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Test Mode
+		</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="main.css"></link>
+	</head>
+	
+	<body>
+		<script src="createHeader.js"></script>
+	
+		<br/>
+	
+		<div id="centerBoard" class="mainDiv">
+		
+		</div>
+		
+		<br/>
+		
+		<script>
+			//load center board 
+			var centerBoard = document.getElementById("centerBoard");
+			
+			//load quotes 
+			var quotesPath = window.location.href.substring(window.location.href.indexOf("=") + 1);
+			
+			//load script 
+			var appendScript = document.createElement("script");
+			appendScript.src = quotesPath;
+			var quotes = [];
+			var quoteIndex = 0;
+			var answeredQuotes = [];
+			var alphaChange = 0.025;
+			
+			appendScript.onload = function(){
+				loadQuote();
+			};
+			
+			//load quote 
+			function loadQuote(){
+				centerBoard.innerHTML = "<h1><u>" + title + "</u><br/><br/>Write Out As Many Quotes As You Can Remember Below</h1><h2>(There are " + quotes.length + " in total):</h2><br/><br/><h3>Quote:</h3><input id=\"inputText\"></input> <br/> <br/> <h3>Quote Source:<h3><input id=\"inputSource\"></input>";
+				
+				if(answeredQuotes.length > 0){
+					centerBoard.innerHTML += "<br/><br/><h2>Your answers so far:</h2><ul>";
+					
+					for(let j = 0; j < answeredQuotes.length; j++){
+						centerBoard.innerHTML += "<li>" + answeredQuotes[j][0] + " (" + answeredQuotes[j][1] + ")</li>";
+					};
+					
+					centerBoard.innerHTML += "</ul>";
+				};
+				
+				centerBoard.innerHTML += "<br/><button onclick=\"seeAnswers()\">When You Can't Remember Any More, Click Here To See All The Answers</button>"
+				document.getElementById("inputText").select();
+			};
+			
+			//start correct 
+			function startCorrect(){
+				centerBoard.style.opacity = 0;
+				centerBoard.innerHTML = "<h1>Correct!</h1>";
+				setTimeout(incrementCorrect, 1);
+			};
+			
+			//incrementCorrect
+			function incrementCorrect(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+		
+				if(parseFloat(centerBoard.style.opacity) < 1){
+					//basically recurse 
+					//alert(centerBoard.style.opacity);
+					setTimeout(incrementCorrect, 10);
+				} else {
+					//decrement
+					setTimeout(decrementCorrect, 10);
+				};
+			};
+			
+			//decrementCorrect
+			function decrementCorrect(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) - alphaChange;
+				
+				if(parseFloat(centerBoard.style.opacity) > 0){
+					//basically recurse 
+					setTimeout(decrementCorrect, 10);
+				} else {
+					//is there another quote
+					if(answeredQuotes.length < quotes.length){
+						loadQuote();
+					} else {
+						//show end screen
+						centerBoard.innerHTML = "<h1>You Have Completed The Test Session!</h1><br/><button onclick=\"returnToMenu()\">Return To Menu</br>";
+					};
+					
+					setTimeout(fadeInQuestion, 10);
+				};
+			};	
+			
+			//fade in question;
+			function fadeInQuestion(){
+				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+				
+				if(parseFloat(centerBoard.style.opacity) >= 1){
+					centerBoard.style.opacity = 1;
+				} else {
+					setTimeout(fadeInQuestion, 10);
+				};
+			};
+			
+			//see answers 
+			function seeAnswers(){
+				//display all quotes and sources in a list 
+				centerBoard.innerHTML = "<h1><u>" + title + "</u></h1><br/><br/><ul>";
+				
+				for(i = 0; i < quotes.length; i++){
+					centerBoard.innerHTML += "<li>\"" + quotes[i][0] + "\" - " + quotes[i][1] + "</li><br/>";
+				};
+				
+				centerBoard.innerHTML += "</ul><br/><button onclick=\"returnToMenu()\">Return To Menu</button>";
+			};
+			
+			//return to menu 
+			function returnToMenu(){
+				window.location = "index.html";
+			};
+			
+			//add event listener 
+			document.addEventListener("input", function(){
+				//check if input element exists 
+				if(document.getElementById("inputText") != undefined && document.getElementById("inputSource") != undefined){
+					//iterate quotes and check 
+					for(i = 0; i < quotes.length; i++){
+						if(answeredQuotes.indexOf(quotes[i]) == -1 && document.getElementById("inputText").value.toLowerCase() == quotes[i][0].toLowerCase() &&  document.getElementById("inputSource").value.toLowerCase() == quotes[i][1].toLowerCase()){
+							//next quote 
+							document.getElementById("inputText").value = "";
+							document.getElementById("inputSource").value = "";
+							answeredQuotes.push(quotes[i]);
+							startCorrect();
+							break;
+						};
+					};
+				};
+			});
+			
+			document.body.appendChild(appendScript);
+		</script>
+	</body>
+</html>

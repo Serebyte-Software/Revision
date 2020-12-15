@@ -1,0 +1,27 @@
+var quotes = [
+	["But take my word for it, you youngsters - and I've learnt in the good hard school of experience - that a man has to mind his own business and look after himself and his own","Mr Birling"],
+	["You mustn't try to build up a kind of wall between us and that girl","Sheila Birling"],
+	["You began to learn something. And now you've stopped. You're ready to go on in the same old way","Sheila Birling"],
+	["Now look at the pair of them - the famous younger generation who know it all. And they can't even take a joke","Mr Birling"],
+	["the fact remains that I did what I did","Eric Birling"],
+	["In fact, this makes all the difference","Mr Birling"],
+	["I'll never, never do it again to anybody... I feel now I can never go there again","Sheila Birling"],
+	["(bitterly) I suppose we're all nice people now","Sheila Birling"],
+	["Never forget it... remember what you did","Inspector Goole"],
+	["there are millions and millions of Eva Smiths and John Smiths still with us, with their lives, their hopes and fears... all intertwined with out lives","Inspector Goole"],
+	["If men will not learn that lesson, they will be taught it in fire and blood and anguish","Inspector Goole"],
+	["We don't live alone, we are members of one body","Inspector Goole"],
+	["The rude way he spoke to Mr Birling and me - it was quite extraordinary","Mrs Birling"],
+	["We hardly ever told him anything we didn't know. Did you notice that?","Sheila Birling"],
+	["I'm sorry she should have come to such a horrible end. But I accept no blame at all","Mrs Birling"],
+	["he ought to be dealt with very severely... make sure that he's compelled to confess in public his responsibility","Mrs Birling"],
+	["(agitated) I don't believe it. I won't believe it","Mrs Birling"],
+	["Eric, I can't believe it. There must be some mistake","Mrs Birling"],
+	["Everything's all right now Sheila. What about this ring?","Gerald"],
+	["She told me she'd been happier than she'd ever been before","Gerald Croft"],	
+	["You don't mean Alderman Meggarty?","Mrs Birling"],
+	["Women of the town?","Mrs Birling"],
+	["[about prostitution] yes, yes. But I see no point in mentioning the subject","Mr Birling"],
+];
+
+var title = "Learning About Life in An Inspector Calls";

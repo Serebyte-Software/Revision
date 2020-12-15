@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			History Revision App
+		</title>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	
+	<body>
+		<script src="createHeader.js"></script>
+		
+		<br/>
+		
+		<div id="questionsBoard" class="mainDiv">
+			
+		</div>
+		
+		<script>
+			//load html elements 
+			var questionsBoard = document.getElementById("questionsBoard");
+			
+			//define variables 
+			var questionNumber = 0;
+			var score = 0;
+			
+			//load questions from hyperlink 
+			var appendScript = document.createElement("script");
+			var filePath = window.location.href.substring(window.location.href.indexOf("=") + 1);
+			appendScript.src = filePath;
+			
+			appendScript.onload = function(){
+			
+				//load questions
+				loadQuestion(0);
+			};
+			
+			//load question 
+			function loadQuestion(num){
+				//set question number
+				questionNumber = num;
+				
+				//set questionsHTML
+				var questionHTML = "<h1>" + title + "</h1>";
+				
+				//get question text 
+				questionHTML += "<h2>Question " + (questionNumber+1) + " out of " + questions.length + "<h3>" + questions[questionNumber][0] + "</h3><br/><br/>";
+				
+				//shuffle answer order 
+				var answerOrder = [];
+				
+				for(i = 0; i < 4; i++){
+					let numToAdd = Math.round(Math.random() * 12345145) % 4;
+					
+					while(answerOrder.indexOf(numToAdd) != -1){
+						numToAdd = Math.round(Math.random() * 12345145) % 4;
+					}
+					
+					answerOrder[i] = numToAdd;
+				};
+				
+				//create buttons 
+				for(i = 0; i < 4 ; i++){
+					//add to question html 
+					if(answerOrder[i] == 0){
+						//right answer
+						questionHTML += "<button class=\"answerButton\" onclick=\"correct()\">" + questions[questionNumber][answerOrder[i] + 1] + "</button>";
+					} else {
+						//wrong answer 
+						questionHTML += "<button class=\"answerButton\" onclick=\"incorrect()\">" + questions[questionNumber][answerOrder[i] + 1] + "</button>";
+					};
+					
+					questionHTML += "<br/><br/>";
+				};
+				
+				//change question html 
+				questionsBoard.innerHTML = questionHTML;
+			};
+			
+			//next question 
+			function nextQuestion(){
+				//move onto next question 
+				if(questionNumber + 1 < questions.length){
+					//normal 
+					loadQuestion(questionNumber + 1);
+				} else {
+					//go to results screen 
+					questionsBoard.innerHTML = "<h2>Well done, you've completed the quiz!</h2><br/><br/>" + "You scored " + score + " out of " + questions.length + ".";
+				};
+			};
+			
+			//correct 
+			function correct(){
+				//increment score 
+				score ++;
+				
+				//next question 
+				questionsBoard.innerHTML = "<h2>Correct!</h2><br/><button onclick=\"nextQuestion()\">Next Question</button>";
+			};
+			
+			//incorrect 
+			function incorrect(){
+				//next question 
+				questionsBoard.innerHTML = "<h2>Inorrect - the answer was \"" + questions[questionNumber][1] + "\"</h2><br/><button onclick=\"nextQuestion()\">Next Question</button>";
+			};
+			
+			//add script to body 
+			document.body.appendChild(appendScript);
+		</script>
+	</body>
+</html>
