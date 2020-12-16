@@ -1,7 +1,7 @@
 var quotes = [
-	["a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner","Narrator (Stave 1)"],
 	["No wind that blew was bitterer than he","Narrator (Stave 1)"],
 	["If they would rather die, they had better do it, and decrease the surplus population","Scrooge (Stave 1)"],
+	["a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner","Narrator (Stave 1)"],
 	["another idol has displaced me... a golden one","Belle (Stave 2)"],
 	["What's Christmas time to you but a time for paying bills with no money...","Scrooge (Stave 1)"],
 	["Secret and self-contained, and solitary as an oyster","Narrator (Stave 1)"],
