@@ -40,9 +40,12 @@
 				loadQuote();
 			};
 			
+			//define alphabet 
+			var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789";
+			
 			//load quote 
 			function loadQuote(){
-				centerBoard.innerHTML = "<h1><u>" + title + "</u><br/><br/>Write Out As Many Quotes As You Can Remember Below</h1><h2>(There are " + quotes.length + " in total):</h2><br/><br/><h3>Quote:</h3><input id=\"inputText\"></input> <br/> <br/> <h3>Quote Source:<h3><input id=\"inputSource\"></input>";
+				centerBoard.innerHTML = "<h1><u>" + title + "</u><br/><br/>Write Out As Many Quotes As You Can Remember Below</h1><h2>(There are " + quotes.length + " in total):</h2><br/><br/><h3>Quote:</h3><textarea rows=3 id=\"inputText\"></textarea> <br/> <br/> <h3>Quote Source:<h3><textarea rows=3 id=\"inputSource\"></textarea>";
 				
 				if(answeredQuotes.length > 0){
 					centerBoard.innerHTML += "<br/><br/><h2>Your answers so far:</h2><ul>";
@@ -127,13 +130,32 @@
 				window.location = "index.html";
 			};
 			
+			//sanitiseInput 
+			function sanitiseInput(stringToSanitise){
+				if(stringToSanitise == undefined){
+					return "";
+				};
+				
+				var newString = "";
+				stringToSanitise = stringToSanitise.toLowerCase();
+				
+				for(let x = 0; x < stringToSanitise.length; x++){
+					if(alphabet.indexOf(stringToSanitise[x]) != -1){
+						//add to new string 
+						newString += stringToSanitise[x];
+					};
+				};
+				
+				return newString;
+			};
+			
 			//add event listener 
 			document.addEventListener("input", function(){
 				//check if input element exists 
 				if(document.getElementById("inputText") != undefined && document.getElementById("inputSource") != undefined){
 					//iterate quotes and check 
 					for(i = 0; i < quotes.length; i++){
-						if(answeredQuotes.indexOf(quotes[i]) == -1 && document.getElementById("inputText").value.toLowerCase() == quotes[i][0].toLowerCase() &&  document.getElementById("inputSource").value.toLowerCase() == quotes[i][1].toLowerCase()){
+						if(answeredQuotes.indexOf(quotes[i]) == -1 && sanitiseInput(document.getElementById("inputText").value) == sanitiseInput(quotes[i][0]) && sanitiseInput(document.getElementById("inputSource").value) == sanitiseInput(quotes[i][1])){
 							//next quote 
 							document.getElementById("inputText").value = "";
 							document.getElementById("inputSource").value = "";
