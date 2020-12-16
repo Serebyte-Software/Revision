@@ -22,6 +22,18 @@
 		<br/>
 		
 		<script>
+			//get the browser 
+			var userAgent = navigator.userAgent;
+			var unrecognisedBrowser = false;
+			
+			if(userAgent.indexOf("Chrome") == -1 && userAgent.indexOf("MSIE") == -1 && userAgent.indexOf("rv:") == -1 && userAgent.indexOf("Firefox") == -1){
+				if(setTimeout == undefined){
+					unrecognisedBrowser = true;
+				
+					alert("The browser you are using is not recommended for this program so some features may not work as they're supposed to. It is recommended that you use Google Chrome");
+				};
+			};
+			
 			//load center board 
 			var centerBoard = document.getElementById("centerBoard");
 			

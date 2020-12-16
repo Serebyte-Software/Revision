@@ -22,6 +22,19 @@
 		<br/>
 		
 		<script>
+			//get the browser 
+			var userAgent = navigator.userAgent;
+			var unrecognisedBrowser = false;
+			
+			if(userAgent.indexOf("Chrome") == -1 && userAgent.indexOf("MSIE") == -1 && userAgent.indexOf("rv:") == -1 && userAgent.indexOf("Firefox") == -1){
+				if(setTimeout == undefined){
+					//check if set timeout is valid
+					unrecognisedBrowser = true;
+				
+					alert("The browser you are using is not recommended for this program so some features may not work as they're supposed to. It is recommended that you use Google Chrome");
+				};
+			};
+			
 			//load center board 
 			var centerBoard = document.getElementById("centerBoard");
 			
@@ -51,33 +64,59 @@
 			
 			//start correct 
 			function startCorrect(){
-				centerBoard.style.opacity = 0;
 				centerBoard.innerHTML = "<h1>Correct!</h1>";
-				setTimeout(incrementCorrect, 1);
+				
+				if(!unrecognisedBrowser){
+					centerBoard.style.opacity = 0;
+					setTimeout(incrementCorrect, 1);
+				} else {
+					centerBoard.style.opacity = 1;
+					incrementCorrect();
+				};
 			};
 			
 			//incrementCorrect
 			function incrementCorrect(){
-				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+				if(!unrecognisedBrowser){
+					centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
 		
-				if(parseFloat(centerBoard.style.opacity) < 1){
-					//basically recurse 
-					//alert(centerBoard.style.opacity);
-					setTimeout(incrementCorrect, 10);
+					if(parseFloat(centerBoard.style.opacity) < 1){
+						//basically recurse 
+						//alert(centerBoard.style.opacity);
+						setTimeout(incrementCorrect, 10);
+					} else {
+						//decrement
+						setTimeout(decrementCorrect, 10);
+					};
 				} else {
-					//decrement
-					setTimeout(decrementCorrect, 10);
+					centerBoard.style.opacity = 1;
+					decrementCorrect();
 				};
 			};
 			
 			//decrementCorrect
 			function decrementCorrect(){
-				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) - alphaChange;
-				
-				if(parseFloat(centerBoard.style.opacity) > 0){
-					//basically recurse 
-					setTimeout(decrementCorrect, 10);
+				if(!unrecognisedBrowser){
+					centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) - alphaChange;
+					
+					if(parseFloat(centerBoard.style.opacity) > 0){
+						//basically recurse 
+						setTimeout(decrementCorrect, 10);
+					} else {
+						//is there another quote?
+						quoteIndex ++;
+						if(quoteIndex < quotes.length){
+							loadQuote(quoteIndex);
+						} else {
+							//show end screen
+							centerBoard.innerHTML = "<h1>You Have Completed The Practice Session!</h1><br/><button onclick=\"returnToMenu()\">Return To Menu</br>";
+						};
+						
+						setTimeout(fadeInQuestion, 10);
+					};
 				} else {
+					centerBoard.innerHTML = "<h1>You Have Completed The Practice Session!</h1><br/><button onclick=\"returnToMenu()\">Return To Menu</br>";
+					
 					//is there another quote?
 					quoteIndex ++;
 					if(quoteIndex < quotes.length){
@@ -87,18 +126,22 @@
 						centerBoard.innerHTML = "<h1>You Have Completed The Practice Session!</h1><br/><button onclick=\"returnToMenu()\">Return To Menu</br>";
 					};
 					
-					setTimeout(fadeInQuestion, 10);
+					fadeInQuestion();
 				};
 			};	
 			
 			//fade in question;
 			function fadeInQuestion(){
-				centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
-				
-				if(parseFloat(centerBoard.style.opacity) >= 1){
-					centerBoard.style.opacity = 1;
+				if(!unrecognisedBrowser){
+					centerBoard.style.opacity = parseFloat(centerBoard.style.opacity) + alphaChange;
+					
+					if(parseFloat(centerBoard.style.opacity) >= 1){
+						centerBoard.style.opacity = 1;
+					} else {
+						setTimeout(fadeInQuestion, 10);
+					};
 				} else {
-					setTimeout(fadeInQuestion, 10);
+					centerBoard.style.opacity = 1;
 				};
 			};
 			
