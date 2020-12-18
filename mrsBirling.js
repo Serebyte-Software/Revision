@@ -7,7 +7,7 @@ var quotes = [
 	["I was the only one of you who didn't give in to him","Mrs Birling"],
 	["I used my influence to have it refused","Mrs Birling"],
 	["She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position","Mrs Birling"],
-	["I'm sorry she should have come to such a horrible ed. But I accept no blame at all","Mrs Birling"],
+	["I'm sorry she should have come to such a horrible end. But I accept no blame at all","Mrs Birling"],
 	["he ought to be dealt with very severely... make sure that he's compelled to confess in public his responsibility","Mrs Birling"],
 	["What an expression, Sheila! Really, the things you girls pick up these days!","Mrs Birling"],
 	["No, of course not. He's only a boy","Mrs Birling"],

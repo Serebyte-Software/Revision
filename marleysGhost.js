@@ -8,7 +8,7 @@ var quotes = [
 	["the spectre's voice disturbed the very marrow of his bones","Narrator (Stave 1)"],
 	["I cannot rest, I cannot stay, I cannot linger anywhere","Marley's Ghost (Stave 1)"],
 	["I am here tonight to warn you","Marley's Ghost (Stave 1)"],
-	["\"Business!\" mankind was my business. The common welfare was my business","Marley's Ghost (Stave 1)"],
+	["Business! mankind was my business. The common welfare was my business","Marley's Ghost (Stave 1)"],
 ];
 
 var title = "Marley's Ghost in A Christmas Carol";
