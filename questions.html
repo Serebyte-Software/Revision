@@ -89,7 +89,7 @@
 					loadQuestion(questionNumber + 1);
 				} else {
 					//go to results screen 
-					questionsBoard.innerHTML = "<h2>Well done, you've completed the quiz!</h2><br/><br/>" + "You scored " + score + " out of " + questions.length + ".";
+					questionsBoard.innerHTML = "<h2>Well done, you've completed the quiz!</h2><br/><br/>" + "<h3>You scored " + score + " out of " + questions.length + ".</h3><br/><br/><button onclick=\"returnToMenu()\">Return To Menu</button>";
 				};
 			};
 			
@@ -105,7 +105,12 @@
 			//incorrect 
 			function incorrect(){
 				//next question 
-				questionsBoard.innerHTML = "<h2>Inorrect - the answer was \"" + questions[questionNumber][1] + "\"</h2><br/><button onclick=\"nextQuestion()\">Next Question</button>";
+				questionsBoard.innerHTML = "<h2>Incorrect - the answer was \"" + questions[questionNumber][1] + "\"</h2><br/><button onclick=\"nextQuestion()\">Next Question</button>";
+			};
+			
+			//return to menu 
+			function returnToMenu(){
+				window.location = "index.html";
 			};
 			
 			//add script to body 
