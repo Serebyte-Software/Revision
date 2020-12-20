@@ -20,7 +20,7 @@ var quotes = [
 	],
 	
 	[
-		"So God created mankind in his own image, in the image of God created them; male and female he created them",
+		"So God created mankind in his own image, in the image of God He created them; male and female He created them",
 		"Genesis 1:27",
 	],
 	
@@ -55,4 +55,4 @@ var quotes = [
 	],
 ];
 
-var title = "Christian Matters of Life and Death"
+var title = "Christian Matters of Life and Death";
