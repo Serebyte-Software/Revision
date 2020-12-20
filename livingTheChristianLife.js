@@ -40,7 +40,7 @@ var quotes = [
 	],
 	
 	[
-		"Our Father in Heaven, hallowed by your name, your kingdom come, your will be done, on earth, as it is in heaven. Give us to day our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation but deliver us from evil",
+		"Our Father in Heaven, hallowed be your name, your kingdom come, your will be done, on earth, as it is in heaven. Give us to day our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation but deliver us from evil",
 		"Matthew 6:9-13",
 	],
 	
