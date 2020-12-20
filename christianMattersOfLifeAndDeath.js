@@ -50,7 +50,7 @@ var quotes = [
 	],
 	
 	[
-		"Very truly I tell you, whoever here's my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life",
+		"Very truly I tell you, whoever hears my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life",
 		"John 5:24",
 	],
 ];
