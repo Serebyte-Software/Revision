@@ -5,7 +5,7 @@ var quotes = [
 	],
 	
 	[
-		"the true worshipers will worship the Father in the Spirit and in truth, for they are the kind of Worshippers the Father seeks",
+		"the true worshippers will worship the Father in the Spirit and in truth, for they are the kind of Worshippers the Father seeks",
 		"John 4:23",
 	],
 	
