@@ -75,7 +75,7 @@ var quotes = [
 	],
 	
 	[
-		"He said to them, \"Go into all the world and preach that gospel to all creation\"",
+		"He said to them, \"Go into all the world and preach the gospel to all creation\"",
 		"Mark 16:15",
 	],
 	
