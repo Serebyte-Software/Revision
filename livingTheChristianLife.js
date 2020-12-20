@@ -30,7 +30,7 @@ var quotes = [
 	],
 	
 	[
-		"Therefore I tell you, whatever you ask for in prayer, believe that you will have recieved it, and it will be yours",
+		"Therefore I tell you, whatever you ask for in prayer, believe that you will have received it, and it will be yours",
 		"Mark 11:24",
 	],
 	
