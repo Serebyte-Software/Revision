@@ -138,7 +138,7 @@ var questions = [
 	[
 		"Which of these was a consequence of the Hungarian Uprising?",
 		"Khrushchev reasserted his authority. He proved to the West that he wasn't going to thaw the Cold War or lose control of the satellite states",
-		"Khrushchev reasserted his authority. He proved to the West that he was a major threat to them and the hew was going to spread communism violently",
+		"Khrushchev reasserted his authority. He proved to the West that he was a major threat to them and they knew was going to spread communism violently",
 		"Khrushchev failed to reassert his authority. Despite his violent actions, he failed to suppress the Hungarian Uprising",
 		"Khrushchev failed to reassert his authority. His refusal to use the military suggested to the West that they could push him around",
 	],

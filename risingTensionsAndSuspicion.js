@@ -26,9 +26,9 @@ var questions = [
 	[
 		"When was the Novikov Telegram sent and who was it addressed to?",
 		"September 1946, Stalin",
-		"",
-		"",
-		"",
+		"February 1946, President Truman",
+		"February 1946, Stalin",
+		"September 1946, President Truman",
 	],
 	
 	[
