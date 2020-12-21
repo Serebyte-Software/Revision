@@ -32,7 +32,7 @@ var questions = [
 	],
 	
 	[
-		"Who sent the Long Telegram",
+		"Who sent the Novikov Telegram",
 		"USSR Diplomat Nikolai Novikov",
 		"US Diplomat George Kennan",
 		"US President Harry Truman",
