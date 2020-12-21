@@ -56,7 +56,7 @@ var questions = [
 	],
 	
 	[
-		"True or false - Rakosi's regime was unpopular",
+		"True or false - Rakosi's regime was unpopular?",
 		"True - the people of Budapest protested against his government in October 1956",
 		"False - the protesters were a minority and the majority of people disagreed with them",
 		"True - there were very few protests against him, but he was not very popular (mostly because of his reluctancy to stand up to Stalin and Khrushchev)",
@@ -74,7 +74,7 @@ var questions = [
 	[
 		"True or False - Nagy wanted to side with the USSR in the event of a war?",
 		"False - Nagy wanted Hungary to be neutral",
-		"False - Nagy wanted to join NAT",
+		"False - Nagy wanted to join NATO",
 		"True - the Red Army had liberated them from the Nazis so Hungary was loyal to the USSR",
 		"True - there was a lot of pressure from the USSR to stay loyal to the Warsaw Pact. Nagy wanted to keep on the good side of the USSR",
 	],
@@ -104,7 +104,7 @@ var questions = [
 	],
 	
 	[
-		"What happened to Nagy after the 1956 Soviet invasion of hungary?",
+		"What happened to Nagy after the 1956 Soviet invasion of Hungary?",
 		"He was arrested and hanged",
 		"He was arrested, tried and found guilty of treason. He was shot",
 		"He was arrested, tried and found guilty of treason. He managed to flee Hungary before he was executed",
@@ -124,7 +124,7 @@ var questions = [
 		"True - he had only had power for two years and wanted to show he wouldn't be messed with. He also wanted to ensure loyalty to communism from the satellite states",
 		"False - Khrushchev wanted to de-Stalinise the country and wanted to be seen as warm and caring",
 		"False - he had only had power for two years and wanted to show that he was willing to be rational and mild-tempered when it came to political debates (unlike Stalin, who had been disliked for that reason)",
-		"True - he had only had power for three years and wanted to show off his ",
+		"True - he had only had power for three years and wanted to show he wouldn't be messed with. He also wanted to ensure loyalty to communism from the satellite states",
 	],
 	
 	[
