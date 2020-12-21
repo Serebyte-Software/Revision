@@ -43,8 +43,8 @@ var questions = [
 		"What were the main points of the Novikov Telegram?",
 		"That the USA was supposedly trying to gain world supremacy and that the USA wanted to limit the influence and power of the Soviet Union in Europe",
 		"That the USSR was supposedly trying to gain world supremacy and that the USSR wanted to limit the influence and power of the USA in Europe",
-		"That the USA was trying to send spies in West Germany to try and bypass the Iron Curtain and where planning on stationing troops ready for invasion",
-		"That the USSR was trying to send spies in East Germany to try and bypass the Iron Curtain and where planning on stationing troops ready for invasion",
+		"That the USA was trying to send spies in West Germany to try and bypass the Iron Curtain and were planning on stationing troops ready for invasion",
+		"That the USSR was trying to send spies in East Germany to try and bypass the Iron Curtain and were planning on stationing troops ready for invasion",
 	],
 	
 	[
