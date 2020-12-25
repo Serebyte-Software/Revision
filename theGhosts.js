@@ -2,7 +2,7 @@ var quotes = [
 	["from the crown of its head there sprung a bright clear jet of light","Narrator (Stave 2)"],
 	["singularly low... as if it were at a distance","Narrator (Stave 2)"],
 	["What is the matter?... Something, I think?","Ghost of Christmas Past (Stave 2)"],
-	["but the relentless Ghost pinioned him in both arms, and forced him to observer","Narrator (Stave 2)"],
+	["but the relentless Ghost pinioned him in both arms, and forced him to observe","Narrator (Stave 2)"],
 	["He has spent but a few pounds of your mortal money - three or four, perhaps. Is that so much that he deserves this praise?","Ghost of Christmas Past (Stave 2)"],
 	["it was a strange figure","Narrator (Stave 2)"],
 	["the figure itself fluctuated in its distinctness","Narrator (Stave 2)"],
