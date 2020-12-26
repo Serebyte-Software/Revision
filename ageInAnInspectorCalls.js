@@ -1,5 +1,5 @@
 var quotes = [
-	["Now you three young people, just listen to this.. by the time you’ll be living in a world that’ll have forgotten all these Capital versus Labour agitators and these silly little war scares","Mr Birling"],
+	["Now you three young people, just listen to this.. by the time you'll be living in a world that'll have forgotten all these Capital versus Labour agitators and these silly little war scares","Mr Birling"],
 	["the fact remains that I did what I did","Eric Birling"],
 	["In fact, this makes all the difference","Mr Birling"],
 	["What an expression, Sheila! Really, the things you girls pick up these days!","Mrs Birling"],
