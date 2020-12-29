@@ -1,6 +1,6 @@
 var quotes = [
 	["Never forget it... remember what you did","Inspector Goole"],
-	["there are millions and millions of Eva Smiths and John Smiths still with us, with their lives, their hopes and fears... all intertwined with out lives","Inspector Goole"],
+	["there are millions and millions of Eva Smiths and John Smiths still with us, with their lives, their hopes and fears... all intertwined with our lives","Inspector Goole"],
 	["If men will not learn that lesson, they will be taught it in fire and blood and anguish","Inspector Goole"],
 	["We don't live alone, we are members of one body","Inspector Goole"],
 	["But these girls aren't cheap labour - they're people","Sheila Birling"],

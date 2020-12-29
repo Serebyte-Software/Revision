@@ -9,7 +9,7 @@ var quotes = [
 	["Public men... have responsibilities as well as privileges","Inspector Goole"],
 	["You've had children. You must have known what she was feeling and you slammed the door in her face","Inspector Goole"],
 	["Never forget it... remember what you did","Inspector Goole"],
-	["there are millions and millions of Eva Smiths and John Smiths still with us, with their lives, their hopes and fears... all intertwined with out lives","Inspector Goole"],
+	["there are millions and millions of Eva Smiths and John Smiths still with us, with their lives, their hopes and fears... all intertwined with our lives","Inspector Goole"],
 	["If men will not learn that lesson, they will be taught it in fire and blood and anguish","Inspector Goole"],
 	["We don't live alone, we are members of one body","Inspector Goole"],
 	["The rude way he spoke to Mr Birling and me - it was quite extraordinary","Mrs Birling"],
